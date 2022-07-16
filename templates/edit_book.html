@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+
+
+    {{ book_data.name }}
+    {{ book_data.author }}
+    <form style="padding: 2em" method="POST" action="{% url 'library_app:store_edited_book' book_data.id %}">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Enter book name : </label>
+            <div class="col-sm-10">
+              <input type="text" name='book_name' value= "{{ book_data.name }}" class="form-control form-control-lg" id="colFormLabelLg" style="width: 20em;" >
+            </div>
+            </div>
+    
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Enter book author name : </label>
+                <div class="col-sm-10">
+                  <input type="text" name='book_auth_name' class="form-control form-control-lg" id="colFormLabelLg" style="width: 20em;" value= "{{ book_data.author }}"">
+                </div>
+              </div>
+          </div>
+    
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          </div>
+      </form>
+
+
+
+{% endblock %}
+

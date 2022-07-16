@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<br>
+<br>
+
+<div style="margin-left:1em">
+<h3>Users:</h3>
+<br>
+{% for user in users %}
+    {% if user.is_staff == False %}
+   <h4>{{user}} <a href="{% url 'library_app:edit_user' user.id%}">Edit user</a>   <a href="{% url 'library_app:del_user' user.id %}">del user</a></h4> 
+    {% endif %}
+{% endfor %}
+</div>
+<br>
+<br>
+<a href="{% url 'library_app:add_user'%}">Add User</a>
+
+
+{% endblock %}
+

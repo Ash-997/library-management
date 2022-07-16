@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<br>
+
+          <h3>Borrowed books</h3>
+          {% for book in Books%}
+          <h4>Name - {{ book }},  Author - {{ book.author }}  <a href="{% url 'library_app:book_return' book.id %}">return</a></h4>
+            {% endfor %}
+            
+        <br>
+        <br>
+        <h3>Account actions</h3>
+        <a href="{% url 'library_app:acc_del' %}">Delete account</a> 
+
+
+          {% endblock %}

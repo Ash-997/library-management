@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+{% if user.is_authenticated %}
+{% else %}
+<h3>Please sign in to borrow the books</h3>
+{% endif %}
+<br>
+<br>
+<h3>books</h3>
+<br>
+
+{% for book in Books %}
+<h4>Name - {{ book }},  Author - {{ book.author }}, 
+    {% if user.is_authenticated %}
+    {% if user.is_staff == False %}
+    {% if book.status == None %} status - <span><a href="{% url 'library_app:borrow' book.id %}">borrow</a></span> 
+    {% else %}<span> - not available</span>{% endif %}{% else %}{% if book.status == None %} status - <span>borrow</span> 
+    {% else %}<span> - not available</span> 
+    {% endif %}
+    {% endif %}
+    {% endif %}</h4>
+{% endfor %}
+
+
+{% endblock %}
+
