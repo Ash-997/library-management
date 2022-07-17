@@ -16,15 +16,15 @@
     {% if user.is_authenticated %}
     {% if user.is_staff == False %}
     {% if book.status == None %}
-     status - <span><a href="{% url 'library_app:borrow' book.id %}">&nbsp;&nbsp; - borrow</a></span> 
+     , status - <span><a href="{% url 'library_app:borrow' book.id %}">&nbsp;&nbsp;borrow</a></span> 
     {% else %}
-    <span style="color: red"> - not available</span>
+    , status - <span style="color: red"> - not available</span>
     {% endif %}
     {% else %}
     {% if book.status == None %}
-         status - <span style="color:green">&nbsp;&nbsp; available  </span> 
+         , status - <span style="color:green">&nbsp;&nbsp; available  </span> 
     {% else %}
-        <span style="color: red"> - not available </span>&nbsp;&nbsp;<span>borrowed by - {{book.status}}</span> 
+    , status -  <span style="color: red"> - not available </span>&nbsp;&nbsp;<span>borrowed by - {{book.status}}</span> 
     {% endif %}
     {% endif %}
     {% endif %}</h4>
