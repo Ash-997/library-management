@@ -7,7 +7,7 @@ from django.urls import reverse
 from .models import Book
 from rest_framework import generics, permissions, mixins
 from rest_framework.response import Response
-from .serializer import RegisterSerializer_lab, RegisterSerializer_lab, UserSerializer,RegisterSerializer_memeber,Bookserializers,Bookserializers_member
+from .serializer import RegisterSerializer_lab, RegisterSerializer_lab, UserSerializer,RegisterSerializer_memeber,Bookserializers,Bookserializers_member,Bookserializers_with_id
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -285,7 +285,7 @@ class Bookviewset_member(generics.GenericAPIView):
 class Bookviewset_all_book(viewsets.ReadOnlyModelViewSet):
 
     queryset = Book.objects.all()
-    serializer_class = Bookserializers
+    serializer_class = Bookserializers_with_id
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]        
     

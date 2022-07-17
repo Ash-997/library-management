@@ -51,3 +51,9 @@ class Bookserializers_member(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = ['status']
+
+
+class Bookserializers_with_id(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = ('id','name','author')
