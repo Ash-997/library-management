@@ -140,4 +140,4 @@ SIMPLE_JWT= {
     'ACCESS_TOKEN_LIFETIME':timedelta(minutes=290)
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://chgeimsprueba.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://https://library--management-webapp.herokuapp.com/']
