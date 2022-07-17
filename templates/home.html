@@ -22,9 +22,9 @@
     {% endif %}
     {% else %}
     {% if book.status == None %}
-         status - <span>borrow</span> 
+         status - <span>borrow - borrowed by - {{book.status}}</span> 
     {% else %}
-        <span> - not available - borrowed by - {{book.status}}</span> 
+        <span> - not available </span> 
     {% endif %}
     {% endif %}
     {% endif %}</h4>
