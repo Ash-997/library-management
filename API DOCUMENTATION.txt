@@ -8,18 +8,18 @@ FOR REGISTRATION
 	as a librarian - 
 		request - POST
 		URL  - https://library--management-webapp.herokuapp.com/api/register_librarian   
-		data format - {{
-						"username":"ashish"
-						"password":"122334" }}
+		data format - {
+					"username":"ashish",
+					"password":"122334" 	}
 
 ------------------------------
 	as a member - 
 		request -  POST
 		URL - https://library--management-webapp.herokuapp.com/api/register_member     
-		data format - {{
-						"username":"ashish"
+		data format - 	{
+						"username":"ashish",
 						"password":"122334"
-											}}
+										}
 	
 ---------------------------------------------------------------------------------------
 						======================
@@ -29,10 +29,10 @@ FOR REGISTRATION
 FOR LOGIN
 	request - POST
 	URL - https://library--management-webapp.herokuapp.com/api/login/			 
-	data format - {{
-						"username":"ashish"
+	data format - 		{
+						"username":"ashish",
 						"password":"122334"
-											}}
+											}
 	after successfull log in get a JWT access token for authentication
 -----------------------------------------------------------------------------------------
 						=======================
@@ -52,16 +52,18 @@ AS A LIBRARIAN -
 		request - POST
 		URL - https://library--management-webapp.herokuapp.com/book/bookdata/
 		data format - 
-			{{ "name":"book name"
+			{ 
+			   "name":"book name",
 			   "author":"author_name"
-						}}
+						}
 	To update book-
 		request - PUT
 		URL - https://library--management-webapp.herokuapp.com/book/bookdata/<book_id>/
 		data format - 
-			{{ "name":"book name"
+			{ 
+			   "name":"book name",
 			   "author":"author_name"
-						}}
+						}
 			
 	To delete book - 
 		request - DELETE
@@ -82,10 +84,10 @@ AS A LIBRARIAN -
 	To update a user - 
 		request - PUT
 		URL  - https://library--management-webapp.herokuapp.com/user/userdata/<user_id>/
-		data format - {{
-				"username":"username"
+		data format - {
+				"username":"username",
 				"password":"password"
-					}}
+					}
 
 	To delete user - 
 		request - DELETE
@@ -108,18 +110,18 @@ AS A MEMBER -
 		request - PUT
 		URL - https://library--management-webapp.herokuapp.com/api/borrow_book/<book:id>
 		data_format - 
-					{{
+					{
 						"status":"enter_username"
 
-								}}
+								}
 	To return book - 
 		request - PUT
 		URL - https://library--management-webapp.herokuapp.com/api/return_book/<book:id>
 		data_format - 
-					{{
+					{
 						"status":"enter_username"
 
-								}}
+								}
 	To delete user - 
 		request - DELETE
 		https://library--management-webapp.herokuapp.com/user/remove_user/<user:id>/
