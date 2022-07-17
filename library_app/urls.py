@@ -5,16 +5,18 @@ from django.conf.urls import include
 from . import views
 from django.urls import re_path as url
 from rest_framework.routers import DefaultRouter,SimpleRouter
-from .views import  Bookviewset, RegisterApi_lab,RegisterApi_member,Userviewset,Bookviewset_member,Bookviewset_all_book,Bookviewset_return
+from .views import  Bookviewset, RegisterApi_lab,RegisterApi_member,Userviewset,Bookviewset_member,Bookviewset_all_book,Bookviewset_return,Userviewset_remove_user
 
 
 router = DefaultRouter()
 router2= DefaultRouter()
 router3= DefaultRouter()
+router4= DefaultRouter()
 
 router.register('bookdata',views.Bookviewset,basename='book')
 router2.register('userdata',views.Userviewset,basename='user')
 router3.register('all_book',views.Bookviewset_all_book,basename='all_book')
+router4.register('remove_user',views.Userviewset_remove_user,basename='remove_user')
 #router3.register('book_mem',views.Bookviewset_member,basename='book_mem')
 
 #urlpatterns = router.urls
@@ -22,6 +24,7 @@ urlpatterns = [
     path('book/',include(router.urls)),
     path('user/',include(router2.urls)),
     path('books/',include(router3.urls)),
+    path('user/',include(router4.urls)),
     path('accounts/', include('django.contrib.auth.urls')),
     path("",views.home,name='home'),
     path("sign_in",views.sign_in,name='sign_in1'),

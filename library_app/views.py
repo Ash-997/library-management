@@ -7,7 +7,7 @@ from django.urls import reverse
 from .models import Book
 from rest_framework import generics, permissions, mixins
 from rest_framework.response import Response
-from .serializer import RegisterSerializer_lab, RegisterSerializer_lab, UserSerializer,RegisterSerializer_memeber,Bookserializers,Bookserializers_member,Bookserializers_with_id
+from .serializer import RegisterSerializer_lab, RegisterSerializer_lab, UserSerializer,RegisterSerializer_memeber,Bookserializers,Bookserializers_member,Bookserializers_with_id,UserSerializer_for_remove_by_mem
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -245,6 +245,24 @@ class Userviewset(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAdminUser]
+
+
+class Userviewset_remove_user(viewsets.ModelViewSet):
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer_for_remove_by_mem
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def list(self, request):
+        return Response({'message': 'list function is not offered in this path.'})
+
+    def create(self, request):
+ 
+        return Response({'message': 'Create function is not offered in this path.'})
+
+    def update(self, request, pk=None):
+        return Response({'message': 'Update function is not offered in this path.'})
 
 
 

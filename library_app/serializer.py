@@ -38,6 +38,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id','username','password')
 
+#user serializer for delete user by member
+class UserSerializer_for_remove_by_mem(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id','username','password')
+
 
 # for add and edit books
 class Bookserializers(serializers.ModelSerializer):
