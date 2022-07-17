@@ -18,7 +18,7 @@
     {% if book.status == None %}
      status - <span><a href="{% url 'library_app:borrow' book.id %}">&nbsp;&nbsp;borrow</a></span> 
     {% else %}
-    <span> - not available</span>
+    <span style="color: red"> - not available</span>
     {% endif %}
     {% else %}
     {% if book.status == None %}
