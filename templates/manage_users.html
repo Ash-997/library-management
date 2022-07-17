@@ -10,13 +10,13 @@
 <br>
 {% for user in users %}
     {% if user.is_staff == False %}
-   <h4>{{user}} <a href="{% url 'library_app:edit_user' user.id%}">Edit user</a>   <a href="{% url 'library_app:del_user' user.id %}">del user</a></h4> 
+   <h4>{{user}} <a href="{% url 'library_app:edit_user' user.id%}">&nbsp;&nbsp;Edit user</a>   <a href="{% url 'library_app:del_user' user.id %}" style="color: red;">&nbsp;&nbsp;del user</a></h4> 
     {% endif %}
 {% endfor %}
 </div>
 <br>
 <br>
-<a href="{% url 'library_app:add_user'%}">Add User</a>
+<a href="{% url 'library_app:add_user'%}">&nbsp;&nbsp;Add User</a>
 
 
 {% endblock %}
