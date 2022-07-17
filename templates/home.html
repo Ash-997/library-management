@@ -12,11 +12,11 @@
 <br>
 
 {% for book in Books %}
-<h4>Name - {{ book }},  Author - {{ book.author }}, 
+<h4>Name - {{ book }},  Author - {{ book.author }} 
     {% if user.is_authenticated %}
     {% if user.is_staff == False %}
     {% if book.status == None %}
-     status - <span><a href="{% url 'library_app:borrow' book.id %}">&nbsp;&nbsp;borrow</a></span> 
+     status - <span><a href="{% url 'library_app:borrow' book.id %}">&nbsp;&nbsp; - borrow</a></span> 
     {% else %}
     <span style="color: red"> - not available</span>
     {% endif %}
