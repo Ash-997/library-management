@@ -258,6 +258,8 @@ class Bookviewset_member(generics.GenericAPIView):
     def put(self, request,id, *args,  **kwargs):
         
         book = Book.objects.get(id=id)
+        if book == None:
+            return Response({ "message": "book not exist", })
         user = request.data
         print(user['status'])
         vef_user= None
@@ -298,6 +300,8 @@ class Bookviewset_return(generics.GenericAPIView):
     def put(self, request,id, *args,  **kwargs):
         
         book = Book.objects.get(id=id)
+        if book == None:
+            return Response({ "message": "book not exist", })
         user = request.data
         print(user['status'])
         vef_user= None
